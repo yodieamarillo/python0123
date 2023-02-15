@@ -1,3 +1,6 @@
+## editado
+## YODIE AMARILLO
+
 import pandas as pd
 import os
 import db
@@ -6,8 +9,7 @@ message="""
     2)Actualizar data del dolar
 """
 print(message)
-a=int(input('ingrese la tarea a realizar: '))
-
+a=int(input('Ingrese la tarea a realizar: '))
 
 def insertData():
     #obtiene la ruta absoluta
@@ -20,7 +22,20 @@ def insertData():
     ### logica para insertar 
     for i,fila in df.iterrows():
         print(fila['ORDER_ID'])
-
+        
 def updateDolar():
     url = 'https://api.apis.net.pe/v1/tipo-cambio-sunat' #tipo cambio sunat
     pass
+
+
+if a==1:
+    print("ingrese valores")
+    TIPO=input('ingrese el nombre del producto: ')
+    NOMBRE=input('ingrese el NOMBRE: ')
+    PRECIO=int(input('ingrese el PRECIO: '))
+    STOCK=int(input('ingrese el STOCK: '))
+    insert="INSERT INTO PRODUCTOS(TIPO,NOMBRE,PRECIO,STCOKACTUAL) VALUES(?,?,?,?);"
+    data=(TIPO,NOMBRE,PRECIO,STOCK)
+elif a==2:
+    updateDolar
+    
